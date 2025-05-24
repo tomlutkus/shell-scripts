@@ -1,4 +1,4 @@
-# 👚 Shell Scripts by Thomas
+# Shell Scripts by Thomas Lutkus
 
 A curated collection of modular, reliable shell scripts for system administration, backups, password generation, and VM management. Designed for minimalism, clarity, and real-world use.
 
