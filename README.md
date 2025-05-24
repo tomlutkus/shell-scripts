@@ -10,11 +10,16 @@ A curated collection of modular, reliable shell scripts for system administratio
 .
 ├── userlib.sh              # Reusable library: password & user creation
 ├── add-user.sh             # Interactive script to add new Linux users
+├── backup-home.sh          # Backup my home folder every week
+├── clear-template.sh       # Clean my VM fresh templates
+├── find-max-mtu.sh         # To figure out the MTU of a connection
+├── fonts-cycle.sh          # Easily cycle through my favorite fonts on Kitty
+├── fonts-test.sh           # Test every Nerd Font with Kitty
+├── link-env.sh             # Link my dotfiles when refreshing a system
+├── ozone-wayland.sh        # Change app to launch in wayland mode
 ├── password-generator.sh   # Generates strong passwords using userlib
-├── win-vm-backup.sh        # Legacy backup script for Win VMs (now modularized)
-├── win-vm-restore.sh       # Legacy restore script for Win VMs (now modularized)
-├── vm-backup.sh            # Backs up VM XML, NVRAM, TPM (persistent ID)
-├── vm-restore.sh           # Restores VM from backup
+├── win-vm-backup.sh        # Backup my Windows 11 VMs keeping unique ids
+├── win-vm-restore.sh       # Restore from my Windows 11 VM backups
 ```
 
 ---
