@@ -12,9 +12,12 @@ A curated collection of modular, reliable shell scripts for system administratio
 ├── add-user.sh             # Interactive script to add new Linux users
 ├── backup-home.sh          # Backup my home folder every week
 ├── clear-template.sh       # Clean my VM fresh templates
+├── containerbk.sh          # Backup container from container/*.env 
+├── containerbr-rotate.sh   # Prunes container backups from containerbk.sh 
 ├── find-max-mtu.sh         # To figure out the MTU of a connection
 ├── fonts-cycle.sh          # Easily cycle through my favorite fonts on Kitty
 ├── fonts-test.sh           # Test every Nerd Font with Kitty
+├── intune-agent.sh         # Starts intune agent inside Distrobox 
 ├── link-env.sh             # Link my dotfiles when refreshing a system
 ├── ozone-wayland.sh        # Change app to launch in wayland mode
 ├── password-generator.sh   # Generates strong passwords using userlib
