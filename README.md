@@ -17,6 +17,7 @@ A curated collection of modular, reliable shell scripts for system administratio
 ├── find-max-mtu.sh         # To figure out the MTU of a connection
 ├── fonts-cycle.sh          # Easily cycle through my favorite fonts on Kitty
 ├── fonts-test.sh           # Test every Nerd Font with Kitty
+├── git-sync.sh             # Script to sync all my git directories 
 ├── intune-agent.sh         # Starts intune agent inside Distrobox 
 ├── link-env.sh             # Link my dotfiles when refreshing a system
 ├── ozone-wayland.sh        # Change app to launch in wayland mode
