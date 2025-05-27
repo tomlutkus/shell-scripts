@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-DEFAULT_CONTAINER="fedora-it"
+DEFAULT_CONTAINER="intune-fedora"
 CONTAINER_NAME="${1:-$DEFAULT_CONTAINER}"
 
 echo "[*] Entering container: $CONTAINER_NAME"
