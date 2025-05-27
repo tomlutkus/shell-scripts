@@ -2,9 +2,10 @@
 
 # Script: git-sync.sh
 # Author: Thomas Lutkus
-# Purpose: To make sure my git repos are always in sync accross computers
+# Purpose: Sync all git repos under key folders with minimal fuss
 
 set -euo pipefail
+trap 'echo "❌ Script failed at line $LINENO."' ERR
 
 HOSTNAME=$(hostname)
 DATE=$(date +%F)
@@ -15,8 +16,10 @@ TARGET_DIRS=( "$HOME/code" "$HOME/env" "$HOME/obsidian" )
 echo "🔍 Scanning for git repos in selected dirs..."
 
 for dir in "${TARGET_DIRS[@]}"; do
-    [ -d "$dir" ] || continue
-    find "$dir" -type d -name ".git" 2>/dev/null | while read -r gitdir; do
+    echo "📁 Checking: $dir"
+    [ -d "$dir" ] || { echo "    ❌ Skipping (not a dir): $dir"; continue; }
+
+    while IFS= read -r gitdir; do
         repo=$(dirname "$gitdir")
         echo -e "\n==> Syncing: $repo"
         cd "$repo" || continue
@@ -31,8 +34,8 @@ for dir in "${TARGET_DIRS[@]}"; do
             continue
         fi
 
-        git checkout main
-        git pull --ff-only
+        git checkout main || echo "    ⚠️ Could not checkout main (may already be on it)"
+        git pull --ff-only || echo "    ⚠️ Could not pull (check upstream)"
 
         git add -A
 
@@ -42,6 +45,7 @@ for dir in "${TARGET_DIRS[@]}"; do
         fi
 
         git commit -m "$COMMIT_MSG" && git push && echo "    🚀 Sync done"
-    done
+    done < <(find "$dir" -type d -name ".git" 2>/dev/null)
+
 done
 
