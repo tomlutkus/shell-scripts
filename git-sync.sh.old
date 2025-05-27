@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Script: git-sync.sh
-# Author: Thomas Lutkus
-# Purpose: To make sure my git repos are always in sync accross computers
-
 set -euo pipefail
 
 HOSTNAME=$(hostname)
@@ -30,9 +26,6 @@ for dir in "${TARGET_DIRS[@]}"; do
             echo "    🚫 No remote set"
             continue
         fi
-
-        git checkout main
-        git pull --ff-only
 
         git add -A
 
